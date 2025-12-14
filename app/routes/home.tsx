@@ -2,8 +2,22 @@ import Navbar from "~/components/Navbar";
 import type { Route } from "./+types/home";
 import ResumeCard from "~/components/ResumeCard";
 import { resumes } from "../../constants"
+import { usePuterStore } from "~/lib/puter";
+import { useLocation, useNavigate } from "react-router";
+import { useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
+    const { isLoading, auth } = usePuterStore();
+  const location = useLocation();
+  const next = location.search.split('next=')[1];
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+    if (!auth.isAuthenticated) {
+        navigate('/auth?next=/');
+    }
+  }, [auth.isAuthenticated, next])
+
   return [
     { title: "Resume Analyzer" },
     { name: "description", content: "Personal feedback for yur dream job" },
