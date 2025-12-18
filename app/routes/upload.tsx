@@ -1,11 +1,11 @@
 import {type FormEvent, useState} from 'react'
 import Navbar from "~/components/Navbar";
 import FileUploader from "~/components/FileUploader";
+import {usePuterStore} from "~/lib/puter";
 import {useNavigate} from "react-router";
 import {convertPdfToImage} from "~/lib/pdfToImage";
 import {generateUUID} from "~/lib/utils";
 import {prepareInstructions} from "../../constants";
-import { usePuterStore } from '~/lib/puter';
 
 const Upload = () => {
     const { auth, isLoading, fs, ai, kv } = usePuterStore();
@@ -22,10 +22,7 @@ const Upload = () => {
         setIsProcessing(true);
 
         setStatusText('Uploading the file...');
-        console.log("Uploading the file");
         const uploadedFile = await fs.upload([file]);
-        console.log("File has been uploaded");
-    
         if(!uploadedFile) return setStatusText('Error: Failed to upload file');
 
         setStatusText('Converting to image...');
