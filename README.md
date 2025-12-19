@@ -11,6 +11,24 @@ A web application that analyzes resumes against job descriptions using AI, provi
 - **File Storage**: Store resumes and images securely using Puter.js file system.
 - **Responsive UI**: Clean, modern interface with Tailwind CSS.
 
+## Project Structure
+
+```
+resume-analyzer/
+├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── routes/
+│   │   ├── auth.tsx
+│   │   ├── home.tsx
+│   │   ├── resume.tsx
+│   │   ├── upload.tsx
+│   │   └── wipe.tsx
+├── constants/
+├── public/
+├── types/
+```
+
 ## Tech Stack
 
 - **Frontend**: React, TypeScript, Vite
@@ -58,23 +76,7 @@ A web application that analyzes resumes against job descriptions using AI, provi
 - **Resume** (`/resume`): View analyzed resumes and feedback.
 - **Wipe** (internal): Route to wipe all user data (used for testing or reset).
 
-## Project Structure
 
-```
-resume-analyzer/
-├── app/
-│   ├── components/
-│   ├── lib/
-│   ├── routes/
-│   │   ├── auth.tsx
-│   │   ├── home.tsx
-│   │   ├── resume.tsx
-│   │   ├── upload.tsx
-│   │   └── wipe.tsx
-├── constants/
-├── public/
-├── types/
-```
 
 ## License
 
