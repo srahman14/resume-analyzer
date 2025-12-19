@@ -7,6 +7,11 @@ import {convertPdfToImage} from "~/lib/pdfToImage";
 import {generateUUID} from "~/lib/utils";
 import {prepareInstructions} from "../../constants";
 
+export const meta = () => [
+  { title: "ResuAi | Upload Resume" },
+  { name: "description", content: "Upload your resume for personal AI feedback" },
+];
+
 const Upload = () => {
     const { auth, isLoading, fs, ai, kv } = usePuterStore();
     const navigate = useNavigate();
