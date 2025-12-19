@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
 
 export function meta({}: Route.MetaArgs) {
-    const { isLoading, auth } = usePuterStore();
+  const { isLoading, auth } = usePuterStore();
   const location = useLocation();
   const next = location.search.split('next=')[1];
   const navigate = useNavigate(); 
@@ -19,8 +19,8 @@ export function meta({}: Route.MetaArgs) {
   }, [auth.isAuthenticated, next])
 
   return [
-    { title: "Resume Analyzer" },
-    { name: "description", content: "Personal feedback for yur dream job" },
+    { title: "ResuAi | Resume Analyzer" },
+    { name: "description", content: "Personal feedback for your dream job" },
   ];
 }
 
