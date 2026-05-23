@@ -1,6 +1,7 @@
 # Resume Analyzer
 
 A web application that analyzes resumes against job descriptions using AI, providing feedback and scoring. Built with React, TypeScript, and Vite, it leverages Puter.js for file storage, AI processing, and user authentication.
+This repo is not maintained. 
 
 ## Features
 
